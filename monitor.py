@@ -8,7 +8,7 @@ import urllib.request
 import RPi.GPIO as GPIO
 
 
-LOG_FILE = "./data.log"
+LOG_FILE = "/opt/monitor/data.log"
 MOCK_API_URL = "https://unaApi.hipotetica.dev/sensor-data"
 
 logging.basicConfig(
