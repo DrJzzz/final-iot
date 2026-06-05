@@ -13,7 +13,7 @@ DHT_GPIO_PIN = 6
 #ECHO_PIN = 5
 DHT_PIN = getattr(board, f"D{DHT_GPIO_PIN}")
 
-LOG_FILE = "data.log"
+LOG_FILE = "./data.log"
 MOCK_API_URL = "https://unaApi.hipotetica.dev/sensor-data"
 
 logging.basicConfig(
