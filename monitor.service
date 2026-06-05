@@ -1,0 +1,21 @@
+[Unit]
+Description=Server Room Monitoring Service
+After=network.target
+
+[Service]
+User=monitor
+Group=monitor
+
+WorkingDirectory=/opt/monitor
+
+ExecStart=/usr/bin/python3 /opt/monitor/monitor.py
+
+Restart=always
+
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+
+[Install]
+WantedBy=multi-user.target
