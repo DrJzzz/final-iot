@@ -7,11 +7,6 @@ import urllib.error
 import urllib.request
 import RPi.GPIO as GPIO
 
-# BCM gpio pins
-DHT_GPIO_PIN = 6
-#TRIG_PIN = 4
-#ECHO_PIN = 5
-DHT_PIN = getattr(board, f"D{DHT_GPIO_PIN}")
 
 LOG_FILE = "./data.log"
 MOCK_API_URL = "https://unaApi.hipotetica.dev/sensor-data"
@@ -28,8 +23,7 @@ TEMP_THRESHOLD = 22  # C
 HUMIDITY_THRESHOLD = 55  # % RH
 
 # init dht11 sensor
-dht_sensor = adafruit_dht.DHT11(DHT_PIN)
-GPIO.setmode(GPIO.BCM)
+dht_sensor = adafruit_dht.DHT11(board.D6)
 
 
 def post_sensor_data(temperature, humidity):
